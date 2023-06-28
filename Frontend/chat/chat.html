@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatApp</title>
+    <link rel="stylesheet" href="../public/chat.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+		<div class="sidebar">
+			<button id="logout">Logout</button>
+			<h1>Chats</h1>
+			<div class="group-button">
+				<button id="groupButton">Create new group</button>
+			</div>
+			<ul id="groups">
+				
+			</ul>
+		</div>
+		<div class="main" id="main" style="visibility: hidden;">
+			<div class="add-users" id="add-users">
+				
+				<div>  
+					<dialog id="myFirstDialog">  
+						<div class="search-users">
+							<input type="text" id="search-users" placeholder="Search users...">
+						</div>
+						<div>
+							<ul id="users">
+			
+							</ul>
+						</div>
+						<button id="hide">Close</button>  
+					</dialog>  
+						<div class="admin-buttons">
+							<button id="addusers-button" style="display: inline-block; visibility: hidden;">Add user</button> 
+
+							<div id="remove-users" style="visibility: hidden; display: inline-block;">
+								<button id="removeusers-button">Remove user</button>
+							</div>
+
+							<div id="Allgroup-users" style="display: inline-block;">
+								<button id="Allgroupuser-button">Show group users</button>
+							</div>
+						</div>
+				</div>
+			</div>
+			
+			<div class="chat" id="messages">
+				<div class="message incoming">
+				</div>
+				<div class="message outgoing">
+				</div>
+			</div>
+			<form class="input" onsubmit="sendChat(event)">
+				<input type="text" id="message" name="message" placeholder="Type your message...">
+				<input type="file" id="file-input" name="attacjment">
+				<button>send</button>
+            </form>
+		</div>
+	</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.2/axios.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./chat.js"></script>
+</body>
+</html>
